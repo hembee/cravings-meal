@@ -1,0 +1,78 @@
+.nav {
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 315px;
+  color: #000;
+  font-family: "Rubik", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.16px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search {
+  width: 400px;
+  padding: 20px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  border: 1px solid #dc8b12;
+  background: rgba(217, 217, 217, 0.05);
+}
+
+.search:focus {
+  outline: none;
+  border-color: #dc8b12;
+}
+
+.search::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  font-family: "Rubik";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.07px;
+}
+.searchIcon {
+  width: 36px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #dc8b12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 45px;
+  border-radius: 10px;
+  border: 1px solid #dc8b12;
+  background: rgba(36, 0, 164, 0);
+  cursor: pointer;
+  color: #000;
+  text-decoration: none;
+  font-family: "Rubik";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.07px;
+}
