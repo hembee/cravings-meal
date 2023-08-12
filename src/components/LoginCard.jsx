@@ -1,13 +1,34 @@
 import { useState } from "react";
 import styles from "../styles/LoginCard.module.css";
-// import axios from "axios"
+import axios from "axios";
+// import { useHistory } from "react-router-dom";
 
 const LoginCard = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // const history = useHistory();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post("API_ENDPOINT_URL", {
+        email,
+        password,
+      });
+
+      // Redirect to /cart upon successful login
+      if (response) {
+        // history.push("/cart");
+      }
+    } catch (error) {
+      console.error("Login failed:", error);
+    }
+  };
+
   return (
     <div className={styles.loginCard}>
-      <form action="/" method="post">
+      <form onSubmit={handleSubmit}>
         <input
           type="email"
           name="email"
@@ -16,6 +37,7 @@ const LoginCard = () => {
           onChange={(e) => {
             setEmail(e.target.value);
           }}
+          required
         />
         <input
           type="password"
@@ -25,7 +47,9 @@ const LoginCard = () => {
           onChange={(e) => {
             setPassword(e.target.value);
           }}
+          required
         />
+        <button type="submit">Login</button>
       </form>
     </div>
   );
