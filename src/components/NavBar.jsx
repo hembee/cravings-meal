@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <nav className={styles.nav}>
-      <p className={styles.logo}>Cravings Meal</p>
+      <Link to="/" className={styles.logo}>
+        Cravings Meal
+      </Link>
       <div className={styles.buttons}>
         <input
           className={styles.search}
