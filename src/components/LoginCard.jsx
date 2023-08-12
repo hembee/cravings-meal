@@ -1,5 +1,5 @@
 import styles from "../styles/LoginCard.module.css"
-axios
+// import axios from "axios"
 
 const LoginCard = () => {
   return (
