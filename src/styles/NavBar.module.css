@@ -7,6 +7,7 @@
 }
 
 .logo {
+  text-decoration: none;
   width: 315px;
   color: #000;
   font-family: "Rubik", sans-serif;
