@@ -23,6 +23,12 @@ const Hero = () => {
       head: "Fast delivery",
       text: "Receive your order in a flash",
     },
+    {
+      id: 4,
+      img: deli,
+      head: "Fast delivery",
+      text: "Receive your order in a flash",
+    },
   ];
   return (
     <section className={styles.hero}>
@@ -49,3 +55,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

@@ -1,38 +1,58 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../styles/LoginCard.module.css";
 import axios from "axios";
-// import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const LoginCard = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const history = useHistory();
+  const [loginSuccess, setLoginSuccess] = useState(false); // State to track login success
+  const [loading, setLoading] = useState(false);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("API_ENDPOINT_URL", {
-        email,
-        password,
-      });
+      setLoading(true);
+      const response = await axios.post(
+        "https://cravings-5jte.onrender.com/user/login",
+        {
+          email,
+          password,
+        }
+      );
 
       // Redirect to /cart upon successful login
-      if (response) {
-        // history.push("/cart");
+      if (response.status === 200) {
+        setLoginSuccess(true);
+        console.log(response.data);
+      } else if (response.status === 404) {
+        console.log(response.data);
       }
     } catch (error) {
       console.error("Login failed:", error);
+    } finally {
+      setLoading(false); 
     }
   };
 
+  // Use useEffect to perform the redirect once loginSuccess changes
+  useEffect(() => {
+    if (loginSuccess) {
+      window.location.href = "/cart"; // Redirect to /cart
+    }
+  }, [loginSuccess]);
+
   return (
-    <div className={styles.loginCard}>
-      <form onSubmit={handleSubmit}>
+    <div>
+      <form className={styles.loginCard} onSubmit={handleSubmit}>
         <input
           type="email"
           name="email"
           id="email"
+          className={styles.email}
+          placeholder="Email"
           value={email}
           onChange={(e) => {
             setEmail(e.target.value);
@@ -43,13 +63,22 @@ const LoginCard = () => {
           type="password"
           name="password"
           id="password"
+          className={styles.password}
+          placeholder="Password"
           value={password}
           onChange={(e) => {
             setPassword(e.target.value);
           }}
           required
         />
-        <button type="submit">Login</button>
+        <button className={styles.submit} type="submit" disabled={loading}>
+          {loading ? (
+            <div className={`${styles.spinner} ${styles.loading}`} />
+          ) : (
+            "Login"
+          )}
+        </button>
+        <p>Don't have an account? <Link className={styles.sign} to="/signup">Sign Up</Link> </p>
       </form>
     </div>
   );
