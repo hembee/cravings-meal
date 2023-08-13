@@ -1,0 +1,87 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signupCard {
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.email,
+.password,
+.firstName,
+.lastName {
+  width: 531px;
+  height: 62px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.07px;
+  padding-left: 40px;
+  margin-bottom: 35px;
+}
+
+.email:focus,
+.password:focus,
+.firstName:focus,
+.lastName:focus {
+  outline: none;
+}
+
+.submit {
+  width: 130px;
+  height: 45px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: none;
+  background: #dc8b12;
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.07px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* Define the keyframes for the rotating animation */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Style for the spinner element */
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #fdfafa;
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
+}
+
+.sign {
+  color: #000;
+}

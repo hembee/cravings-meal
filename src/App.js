@@ -2,6 +2,8 @@ import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Cart from "./pages/Cart";
 
 
 function App() {
@@ -9,7 +11,8 @@ function App() {
     <Router>
         <Route exact path="/" component={Landing} />
         <Route path="/login" component={Login} />
-        <Route path="/signup" component={Landing} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/cart" component={Cart} />
     </Router>
   );
 }
