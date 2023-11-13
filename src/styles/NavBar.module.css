@@ -86,7 +86,7 @@
     width: 100%;
   }
   .logo {
-    font-size: 22px;
+    font-size: 30px;
     letter-spacing: 0.16px;
     width: fit-content;
   }
@@ -95,15 +95,15 @@
     display: none;
   }
   .buttons {
-    gap: 10px;
+    gap: 15px;
     align-items: center;
   }
 
   .loginBtn {
     width: 90px;
-    height: 25px;
+    height: 30px;
     border-radius: 5px;
-    font-size: 12px;
+    font-size: 15px;
     letter-spacing: 0.07px;
   }
 }
