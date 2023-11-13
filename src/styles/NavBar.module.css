@@ -82,11 +82,11 @@
   .nav {
     padding: 20px 10px;
     justify-content: center;
-    gap: 30%;
+    gap: 25%;
     width: 100%;
   }
   .logo {
-    font-size: 30px;
+    font-size: 22px;
     letter-spacing: 0.16px;
     width: fit-content;
   }
