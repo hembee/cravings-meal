@@ -91,9 +91,9 @@
     width: 90vw;
     height: auto;
     padding: 20px;
-    margin-top: 30%;
-    background-color: transparent;
-  }
+    margin-top: 35%;
+    background-color: #fdfafa;
+  } 
   .signupCard p {
     font-size: 10px;
   }
