@@ -1,6 +1,12 @@
+import { useState } from "react";
 import styles from "../styles/NavBar.module.css";
 import { Link } from "react-router-dom";
 const NavBar = () => {
+  const [isSignup, setIsSignup] = useState(false);
+
+  const toggleLoginSignup = () => {
+    setIsSignup((prevIsSignup) => !prevIsSignup);
+  };
   return (
     <nav className={styles.nav}>
       <Link to="/" className={styles.logo}>
@@ -15,8 +21,8 @@ const NavBar = () => {
         <span className={styles.searchIcon}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="15"
+            width="14"
+            height="13"
             viewBox="0 0 16 15"
             fill="none"
           >
@@ -29,8 +35,8 @@ const NavBar = () => {
         <Link to="/cart" className={styles.cart}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="31"
+            width="21"
+            height="20"
             viewBox="0 0 30 31"
             fill="none"
           >
@@ -40,8 +46,12 @@ const NavBar = () => {
             />
           </svg>
         </Link>
-        <Link to="/login" className={styles.loginBtn}>
-          Login
+        <Link
+          to={isSignup ? "/signup" : "/login"}
+          className={styles.loginBtn}
+          onClick={toggleLoginSignup}
+        >
+          {isSignup ? "Signup" : "Login"}
         </Link>
       </div>
     </nav>

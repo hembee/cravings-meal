@@ -32,11 +32,10 @@
   margin-bottom: 35px;
 }
 
-.email:focus, .password:focus{
-    outline: none;
+.email:focus,
+.password:focus {
+  outline: none;
 }
-
-
 
 .submit {
   width: 130px;
@@ -71,12 +70,39 @@
   width: 20px;
   height: 20px;
   border: 3px solid rgba(0, 0, 0, 0.1);
-  border-top-color: #fdfafa; 
+  border-top-color: #fdfafa;
   border-radius: 50%;
-  animation: rotate 1s linear infinite; 
+  animation: rotate 1s linear infinite;
 }
 
-
-.sign{
+.sign {
   color: #000;
+}
+
+@media (max-width: 767px) {
+  .loginCard {
+    width: 300px;
+    height: auto;
+    padding: 20px;
+    margin-top: 50%;
+  }
+  .loginCard p {
+    font-size: 10px;
+  }
+
+  .email,
+  .password {
+    width: 90%;
+    height: 30px; /* Adjust height to your preference */
+    margin-bottom: 10px;
+    font-size: 8px;
+    padding-left: 10px;
+  }
+
+  .submit {
+    width: 80%;
+    height: 25px; /* Adjust height to your preference */
+    margin-bottom: 10px;
+    font-size: 8px;
+  }
 }

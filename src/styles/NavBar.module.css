@@ -77,3 +77,33 @@
   line-height: normal;
   letter-spacing: 0.07px;
 }
+
+@media (max-width: 767px) {
+  .nav {
+    padding: 20px 10px;
+    justify-content: center;
+    gap: 40%;
+    width: 100%;
+  }
+  .logo {
+    font-size: 18px;
+    letter-spacing: 0.16px;
+    width: fit-content;
+  }
+  .search,
+  .searchIcon {
+    display: none;
+  }
+  .buttons {
+    gap: 10px;
+    align-items: center;
+  }
+
+  .loginBtn {
+    width: 80px;
+    height: 20px;
+    border-radius: 5px;
+    font-size: 10px;
+    letter-spacing: 0.07px;
+  }
+}

@@ -58,7 +58,11 @@ const Cart = () => {
           })}
         </div>
         <div className={styles.col}>
-          <h1>L'addition</h1>
+          <div className={styles.ladittion}>
+            <h1>Order Total</h1>
+            <div className={styles.row}></div>
+            <div className={styles.row}></div>
+          </div>
         </div>
       </div>
     </div>

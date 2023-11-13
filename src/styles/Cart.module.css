@@ -6,25 +6,23 @@
 .row {
   display: flex;
   flex-direction: row;
-  border: 1px solid yellow;
 }
 
 .col {
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
-  padding: 50px;
+  padding: 0 50px;
 }
 
 .mealCard {
-  width: 717px;
-  height: 207px;
+  width: 617px;
+  height: 180px;
   flex-shrink: 0;
   background: rgba(83, 220, 18, 0.02);
   padding: 40px 35px;
   display: flex;
   flex-direction: row;
-  margin-bottom: 15px;
+  /* margin-bottom: 5px; */
   align-items: center;
   position: relative;
 }
@@ -95,4 +93,11 @@
   border: none;
   color: #fff;
   background-color: #dc8b12;
+}
+
+.ladittion{
+  width: 400px;
+height: 344px;
+flex-shrink: 0;
+background: rgba(83, 220, 18, 0.02);
 }
