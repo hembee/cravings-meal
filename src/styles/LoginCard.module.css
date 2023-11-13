@@ -81,10 +81,10 @@
 
 @media (max-width: 767px) {
   .loginCard {
-    width: 300px;
+    width: 100vw;
     height: auto;
     padding: 20px;
-    margin-top: 50%;
+    background-color: transparent;
   }
   .loginCard p {
     font-size: 10px;
