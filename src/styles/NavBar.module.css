@@ -65,7 +65,7 @@
   width: 130px;
   height: 45px;
   border-radius: 10px;
-background: #dc8b12;
+  background: #dc8b12;
   color: #fff;
   cursor: pointer;
   color: #fdf9f9;
@@ -80,13 +80,16 @@ background: #dc8b12;
 
 @media (max-width: 767px) {
   .nav {
-    padding: 30px 10px;
+    background-color: #97c8d1;
+    padding: 30px 5px;
     justify-content: center;
-    gap: 25%;
+    gap: 15%;
     width: 100%;
+    position: fixed;
+    z-index: 200;
   }
   .logo {
-    font-size: 110%;
+    font-size: 150%;
     letter-spacing: 0.16px;
     width: fit-content;
   }
@@ -99,7 +102,7 @@ background: #dc8b12;
     align-items: center;
   }
 
-  .loginBtn {   
+  .loginBtn {
     width: 84px;
     height: 30px;
     border-radius: 5px;
