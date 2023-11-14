@@ -29,13 +29,13 @@
   padding: 20px;
   flex-shrink: 0;
   border-radius: 15px;
-  border: 1px solid #dc8b12;
+  border: 1px solid #fff;
   background: rgba(217, 217, 217, 0.05);
 }
 
 .search:focus {
   outline: none;
-  border-color: #dc8b12;
+  border-color: #fff;
 }
 
 .search::placeholder {
@@ -65,10 +65,10 @@
   width: 130px;
   height: 45px;
   border-radius: 10px;
-  border: 1px solid #dc8b12;
-  background: rgba(36, 0, 164, 0);
+background: #dc8b12;
+  color: #fff;
   cursor: pointer;
-  color: #000;
+  color: #fdf9f9;
   text-decoration: none;
   font-family: "Rubik";
   font-size: 14px;
@@ -99,11 +99,11 @@
     align-items: center;
   }
 
-  .loginBtn {
-    width: 90px;
+  .loginBtn {   
+    width: 84px;
     height: 30px;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 13px;
     letter-spacing: 0.07px;
   }
 }

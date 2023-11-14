@@ -3,7 +3,7 @@ import styles from "../styles/LoginCard.module.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const LoginCard = ({ setIsLoggedIn }) => {
+const LoginCard = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginSuccess, setLoginSuccess] = useState(false); // State to track login success
@@ -25,7 +25,6 @@ const LoginCard = ({ setIsLoggedIn }) => {
       // Redirect to /cart upon successful login
       if (response.status === 200) {
         setLoginSuccess(true);
-        setIsLoggedIn(true);
         console.log(response.data);
       } else if (response.status === 404) {
         console.log(response.data);
@@ -39,7 +38,7 @@ const LoginCard = ({ setIsLoggedIn }) => {
 
   useEffect(() => {
     if (loginSuccess) {
-      window.href.redirect("/cart"); 
+      window.location.href = "/cart";
     }
   }, [loginSuccess]);
 
@@ -78,10 +77,10 @@ const LoginCard = ({ setIsLoggedIn }) => {
           )}
         </button>
         <p>
-          Don't have an account?{" "}
+          Don't have an account?
           <Link className={styles.sign} to="/signup">
             Sign Up
-          </Link>{" "}
+          </Link>
         </p>
       </form>
     </div>
