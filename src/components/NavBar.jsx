@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "../styles/NavBar.module.css";
 import { Link } from "react-router-dom";
-const NavBar = () => {
+const NavBar = ({ isLoggedIn }) => {
   const [isSignup, setIsSignup] = useState(false);
 
   const toggleLoginSignup = () => {
@@ -46,13 +46,15 @@ const NavBar = () => {
             />
           </svg>
         </Link>
-        <Link
-          to={isSignup ? "/signup" : "/login"}
-          className={styles.loginBtn}
-          onClick={toggleLoginSignup}
-        >
-          {isSignup ? "Signup" : "Login"}
-        </Link>
+        {!isLoggedIn &&(
+          <Link
+            to={isSignup ? "/signup" : "/login"}
+            className={styles.loginBtn}
+            onClick={toggleLoginSignup}
+          >
+            {isSignup ? "Signup" : "Login"}
+          </Link>
+        )}
       </div>
     </nav>
   );

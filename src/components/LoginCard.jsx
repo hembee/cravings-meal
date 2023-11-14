@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import styles from "../styles/LoginCard.module.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
-const LoginCard = () => {
+const LoginCard = ({setIsLoggedIn}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginSuccess, setLoginSuccess] = useState(false); // State to track login success
   const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
 
   const handleSubmit = async (e) => {
@@ -26,6 +27,7 @@ const LoginCard = () => {
       // Redirect to /cart upon successful login
       if (response.status === 200) {
         setLoginSuccess(true);
+        setIsLoggedIn(true)
         console.log(response.data);
       } else if (response.status === 404) {
         console.log(response.data);
@@ -37,12 +39,11 @@ const LoginCard = () => {
     }
   };
 
-  // Use useEffect to perform the redirect once loginSuccess changes
-  useEffect(() => {
-    if (loginSuccess) {
-      window.location.href = "/cart"; // Redirect to /cart
-    }
-  }, [loginSuccess]);
+ useEffect(() => {
+   if (loginSuccess) {
+     history.push("/cart"); // Use history.push to navigate without a full-page reload
+   }
+ }, [loginSuccess, history]);
 
   return (
     <div>
