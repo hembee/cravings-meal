@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react";
 import styles from "../styles/LoginCard.module.css";
 import axios from "axios";
-import {Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const LoginCard = ({setIsLoggedIn}) => {
+const LoginCard = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginSuccess, setLoginSuccess] = useState(false); // State to track login success
   const [loading, setLoading] = useState(false);
-const navigate = useNavigate();
-
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +26,7 @@ const navigate = useNavigate();
       // Redirect to /cart upon successful login
       if (response.status === 200) {
         setLoginSuccess(true);
-        setIsLoggedIn(true)
+        setIsLoggedIn(true);
         console.log(response.data);
       } else if (response.status === 404) {
         console.log(response.data);
@@ -35,15 +34,15 @@ const navigate = useNavigate();
     } catch (error) {
       console.error("Login failed:", error);
     } finally {
-      setLoading(false); 
+      setLoading(false);
     }
   };
 
- useEffect(() => {
-   if (loginSuccess) {
-     navigate("/cart"); // Use history.push to navigate without a full-page reload
-   }
- }, [loginSuccess,navigate]);
+  useEffect(() => {
+    if (loginSuccess) {
+      navigate("/cart"); // Use history.push to navigate without a full-page reload
+    }
+  }, [loginSuccess, navigate]);
 
   return (
     <div>
@@ -79,7 +78,12 @@ const navigate = useNavigate();
             "Login"
           )}
         </button>
-        <p>Don't have an account? <Link className={styles.sign} to="/signup">Sign Up</Link> </p>
+        <p>
+          Don't have an account?{" "}
+          <Link className={styles.sign} to="/signup">
+            Sign Up
+          </Link>{" "}
+        </p>
       </form>
     </div>
   );
