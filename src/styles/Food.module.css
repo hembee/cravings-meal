@@ -74,3 +74,12 @@
   background-color: #dc8b12;
 }
 
+@media (max-width: 767px) {
+  .food {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+}
