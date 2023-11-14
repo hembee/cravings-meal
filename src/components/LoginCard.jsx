@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import styles from "../styles/LoginCard.module.css";
 import axios from "axios";
-import { Link, useHistory } from "react-router-dom";
+import {Link, useNavigate } from "react-router-dom";
 
 const LoginCard = ({setIsLoggedIn}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginSuccess, setLoginSuccess] = useState(false); // State to track login success
   const [loading, setLoading] = useState(false);
-  const history = useHistory();
+const navigate = useNavigate();
 
 
   const handleSubmit = async (e) => {
@@ -41,9 +41,9 @@ const LoginCard = ({setIsLoggedIn}) => {
 
  useEffect(() => {
    if (loginSuccess) {
-     history.push("/cart"); // Use history.push to navigate without a full-page reload
+     navigate("/cart"); // Use history.push to navigate without a full-page reload
    }
- }, [loginSuccess, history]);
+ }, [loginSuccess,navigate]);
 
   return (
     <div>
