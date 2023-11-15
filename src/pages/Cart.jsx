@@ -3,6 +3,7 @@ import styles from "../styles/Cart.module.css";
 import burger from "../images/burger.png";
 import pasta from "../images/pasta.png";
 import donut from "../images/donuts.png";
+import { useState } from "react";
 
 const Cart = () => {
   const meals = [
@@ -28,12 +29,31 @@ const Cart = () => {
       price: "₦800",
     },
   ];
+
+  const [counts, setCounts] = useState(new Array(meals.length).fill(0));
+
+  const increaseCount = (index) => {
+    setCounts((prevCounts) => {
+      const newCounts = [...prevCounts];
+      newCounts[index] += 1;
+      return newCounts;
+    });
+  };
+
+  const decreaseCount = (index) => {
+    setCounts((prevCounts) => {
+      const newCounts = [...prevCounts];
+      newCounts[index] = Math.max(0, newCounts[index] - 1);
+      return newCounts;
+    });
+  };
+
   return (
     <div className={styles.cart}>
       <NavBar />
       <div className={styles.row}>
         <div className={styles.col}>
-          {meals.map((meal) => {
+          {meals.map((meal, index) => {
             return (
               <div className={styles.mealCard} key={meal.id}>
                 <div className={styles.col1}>
@@ -49,9 +69,19 @@ const Cart = () => {
                   <h3>{meal.price}</h3>
                 </div>
                 <div className={styles.col3}>
-                  <button className={styles.decreaseBtn}>-</button>
-                  <p>1</p>
-                  <button className={styles.increaseBtn}>+</button>
+                  <button
+                    className={styles.decreaseBtn}
+                    onClick={() => decreaseCount(index)}
+                  >
+                    -
+                  </button>
+                  <p>{counts[index]}</p>
+                  <button
+                    className={styles.increaseBtn}
+                    onClick={() => increaseCount(index)}
+                  >
+                    +
+                  </button>
                 </div>
               </div>
             );
