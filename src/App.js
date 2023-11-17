@@ -5,19 +5,19 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Cart from "./pages/Cart";
 
-
 function App() {
   return (
     <Router>
-        <Route exact path="/" component={Landing} />
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
-        <Route path="/cart" component={Cart} />
+      <Route exact path="/" component={Landing} />
+      <Route path="/login" component={Login} />
+      <Route path="/signup" component={Signup} />
+      <Route path="/cart" component={Cart} />
     </Router>
   );
 }
 
 export default App;
+
 
 // import "./App.css";
 // import {
@@ -31,6 +31,7 @@ export default App;
 // import Login from "./pages/Login";
 // import NavBar from "./components/NavBar";
 // import Signup from "./pages/Signup";
+// import Cart from "./pages/Cart";
 
 // function App(props) {
 //   const router = createBrowserRouter(
@@ -39,6 +40,7 @@ export default App;
 //         <Route index element={<Landing />} />
 //         <Route path="/login" element={<Login />} />
 //         <Route path="/login" element={<Signup />} />
+//         <Route path="/cart" element={<Cart />} />
 //       </Route>
 //     )
 //   );
