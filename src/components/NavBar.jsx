@@ -56,14 +56,10 @@ const NavBar = ({login, loginHandler}) => {
         </Link>): (<Link
           to={"/login"}
           onClick={loginHandler}
-          className={styles.loginBtn}
         >
           Logout
         </Link>)}
         
       </div>
-    </nav>
-  );
-};
 
 export default NavBar;
