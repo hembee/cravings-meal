@@ -59,7 +59,8 @@ const NavBar = ({login, loginHandler}) => {
         >
           Logout
         </Link>)}
-        
       </div>
+      </nav>
+    )}
 
 export default NavBar;
