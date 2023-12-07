@@ -116,10 +116,10 @@
 }
 
 .lastrow{
-  margin-top: 70px !important;
+  margin-top: 50px !important;
   margin-bottom: 30px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .proceedBtn{
@@ -129,8 +129,8 @@
   background-color: #dc8b12;
   padding: 10px;
   border-radius: 8px;
-  font-size: 12px;
   font-weight:  300px;
+  height: 45px;
 }
 
 
@@ -169,6 +169,6 @@
     margin-top: 20px;
     width: 100%;
     text-align: center;
-    padding: 0 50px;
+    padding: 0 40px;
   }
 }
