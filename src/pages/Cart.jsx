@@ -87,9 +87,25 @@ const Cart = () => {
         </div>
         <div className={styles.col}>
           <div className={styles.ladittion}>
-            <h1>Order Total</h1>
-            <div className={styles.row}></div>
-            <div className={styles.row}></div>
+            <h2>Order Total</h2>
+            <div className={styles.row}>
+              <p className={styles.para}>Subtotal</p>
+              <p className={styles.price}>1200</p>
+            </div>
+            <div className={styles.row}>
+              <p className={styles.para}>Delivery</p>
+              <p className={styles.price}>300</p>
+            </div>
+            <div className={`${styles.lastrow} ${styles.row}`}>
+              <p className={styles.para}>Total</p>
+              <p className={styles.price}>1500</p>
+            </div>
+            <button
+                    className={styles.proceedBtn}
+                    onClick={()=>{}}
+                  >
+                    Proceed to checkout
+                  </button>
           </div>
         </div>
       </div>

@@ -100,7 +100,41 @@
   height: 344px;
   flex-shrink: 0;
   background: rgba(83, 220, 18, 0.02);
+  text-align: center;
 }
+
+
+.ladittion h2{
+  margin-bottom : 60px
+}
+
+.ladittion .row{
+  display: flex;
+  flex-direction : row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.lastrow{
+  margin-top: 70px !important;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.proceedBtn{
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: #dc8b12;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight:  300px;
+}
+
+
+
 
 @media (max-width: 767px) {
   .row {
@@ -135,5 +169,6 @@
     margin-top: 20px;
     width: 100%;
     text-align: center;
+    padding: 0 50px;
   }
 }
