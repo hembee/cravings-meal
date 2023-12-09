@@ -31,7 +31,7 @@ const loginHandler= ()=>{
   );
   return (
     <div>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </div>
   );
 }

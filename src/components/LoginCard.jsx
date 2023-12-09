@@ -3,13 +3,12 @@ import styles from "../styles/LoginCard.module.css";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
-const LoginCard = ({loginHandler}) => {
+const LoginCard = ({ loginHandler }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginSuccess, setLoginSuccess] = useState(false); // State to track login success
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +26,7 @@ const LoginCard = ({loginHandler}) => {
       // Redirect to /cart upon successful login
       if (response.status === 200) {
         setLoginSuccess(true);
-        loginHandler()
+        loginHandler();
         console.log(response.data);
       } else if (response.status === 404) {
         console.log(response.data);
@@ -41,7 +40,7 @@ const LoginCard = ({loginHandler}) => {
 
   useEffect(() => {
     if (loginSuccess) {
-      navigate("/cart") ;
+      navigate("/cart");
     }
   }, [loginSuccess, navigate]);
 

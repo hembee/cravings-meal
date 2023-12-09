@@ -1,9 +1,8 @@
 import { useState } from "react";
 import styles from "../styles/NavBar.module.css";
 import { Link } from "react-router-dom";
-const NavBar = ({login, loginHandler}) => {
+const NavBar = ({ login, loginHandler }) => {
   const [isSignup, setIsSignup] = useState(false);
- 
 
   const toggleLoginSignup = () => {
     setIsSignup((prevIsSignup) => !prevIsSignup);
@@ -47,20 +46,26 @@ const NavBar = ({login, loginHandler}) => {
             />
           </svg>
         </Link>
-        {!login ? (<Link
-          to={isSignup ? "/signup" : "/login"}
-          className={styles.loginBtn}
-          onClick={toggleLoginSignup}
-        >
-          {isSignup ? "Signup" : "Login"}
-        </Link>): (<Link
-          to={"/login"}
-          onClick={loginHandler}
-        >
-          Logout
-        </Link>)}
+        {!login ? (
+          <Link
+            to={isSignup ? "/signup" : "/login"}
+            className={styles.loginBtn}
+            onClick={toggleLoginSignup}
+          >
+            {isSignup ? "Signup" : "Login"}
+          </Link>
+        ) : (
+          <Link
+            to={"/login"}
+            className={styles.loginBtn}
+            onClick={loginHandler}
+          >
+            Logout
+          </Link>
+        )}
       </div>
-      </nav>
-    )}
+    </nav>
+  );
+};
 
 export default NavBar;
