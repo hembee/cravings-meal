@@ -10,22 +10,22 @@ const Cart = () => {
       id: 1,
       img: burger,
       header: "Burger",
-      text: "Lorem ipsum dolor sit amet cocon adipisicing elit........",
-      price: "₦2400",
+      text: "A mouth-watering burger with juicy beef patty, fresh lettuce, ripe tomatoes, and our secret sauce. Served in a soft, toasted bun.",
+      price: 2400,
     },
     {
       id: 2,
       img: pasta,
       header: "Pasta",
-      text: "Lorem ipsum dolor sit amet cocon adipisicing elit........",
-      price: "₦1800",
+      text: "Delicious pasta dish cooked to perfection with al dente noodles, savory marinara sauce, fresh herbs, and grated Parmesan cheese.",
+      price: 1800,
     },
     {
       id: 3,
       img: donut,
       header: "Donut",
-      text: "Lorem ipsum dolor sit amet cocon adipisicing elit........",
-      price: "₦800",
+      text: "Indulge in a sweet and fluffy donut, glazed to perfection. The perfect treat to satisfy your sweet tooth.",
+      price: 800,
     },
   ];
 
@@ -47,6 +47,16 @@ const Cart = () => {
     });
   };
 
+  const calculateSubtotal = () => {
+    return meals.reduce((total, meal, index) => {
+      return total + meal.price * counts[index];
+    }, 0);
+  };
+
+  const deliveryFee = 800;
+  const subtotal = calculateSubtotal();
+  const total = subtotal + deliveryFee;
+
   return (
     <div className={styles.cart}>
       <div className={styles.row}>
@@ -64,7 +74,7 @@ const Cart = () => {
                 <div className={styles.col2}>
                   <h2>{meal.header}</h2>
                   <p>{meal.text}</p>
-                  <h3>{meal.price}</h3>
+                  <h3>{`₦${meal.price}`}</h3>
                 </div>
                 <div className={styles.col3}>
                   <button
@@ -90,22 +100,24 @@ const Cart = () => {
             <h2>Order Total</h2>
             <div className={styles.row}>
               <p className={styles.para}>Subtotal</p>
-              <p className={styles.price}>1200</p>
+              <p className={styles.price}>{`₦${subtotal}`}</p>
             </div>
             <div className={styles.row}>
               <p className={styles.para}>Delivery</p>
-              <p className={styles.price}>300</p>
+              <p className={styles.price}>{`₦${deliveryFee}`}</p>
             </div>
             <div className={`${styles.lastrow} ${styles.row}`}>
               <p className={styles.para}>Total</p>
-              <p className={styles.price}>1500</p>
+              <p className={styles.price}>{`₦${total}`}</p>
             </div>
             <button
-                    className={styles.proceedBtn}
-                    onClick={()=>{}}
-                  >
-                    Proceed to checkout
-                  </button>
+              className={styles.proceedBtn}
+              onClick={() => {
+                // Implement your checkout logic here
+              }}
+            >
+              Proceed to checkout
+            </button>
           </div>
         </div>
       </div>
