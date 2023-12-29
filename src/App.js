@@ -14,16 +14,23 @@ import Cart from "./pages/Cart";
 import { useState } from "react";
 
 function App(props) {
-  const [login, setLogin] = useState(false)
-const loginHandler= ()=>{
-  setLogin((prevLogin)=> !prevLogin)
-}
+  const [login, setLogin] = useState(false);
+  const loginHandler = () => {
+    setLogin((prevLogin) => !prevLogin);
+  };
+  const logoutHandler = () => {
+    localStorage.removeItem("authToken");
+    setLogin((prevLogin) => !prevLogin);
+  };
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<Root login={login} loginHandler={loginHandler} />}>
+      <Route
+        path="/"
+        element={<Root login={login} logoutHandler={logoutHandler} />}
+      >
         <Route index element={<Landing />} />
-        <Route path="/login" element={<Login loginHandler={loginHandler}/>} />
+        <Route path="/login" element={<Login loginHandler={loginHandler} />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/cart" element={<Cart />} />
       </Route>
@@ -35,7 +42,7 @@ const loginHandler= ()=>{
     </div>
   );
 }
-const Root = ({login, loginHandler}) => {
+const Root = ({ login, loginHandler }) => {
   return (
     <>
       <NavBar login={login} loginHandler={loginHandler} />
@@ -47,5 +54,3 @@ const Root = ({login, loginHandler}) => {
 };
 
 export default App;
-
-

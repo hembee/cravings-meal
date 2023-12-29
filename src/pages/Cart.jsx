@@ -2,9 +2,20 @@ import styles from "../styles/Cart.module.css";
 import burger from "../images/burger.png";
 import pasta from "../images/pasta.png";
 import donut from "../images/donuts.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+
+    if (!token) {
+      navigate("/login");
+    }
+  }, [navigate]);
+
   const meals = [
     {
       id: 1,

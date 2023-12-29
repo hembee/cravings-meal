@@ -1,12 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../styles/NavBar.module.css";
 import { Link } from "react-router-dom";
-const NavBar = ({ login, loginHandler }) => {
-  const [isSignup, setIsSignup] = useState(false);
+const NavBar = ({ login, logoutHandler }) => {
+  const [isSignup, setIsSignup] = useState(true);
+
+  useEffect(() => {
+    // Retrieve the stored value from local storage
+    const storedIsSignup = localStorage.getItem("isSignup");
+
+    // Set the state based on the stored value (or use the default)
+    setIsSignup(storedIsSignup === "true");
+  }, []);
 
   const toggleLoginSignup = () => {
+    // Toggle the state
     setIsSignup((prevIsSignup) => !prevIsSignup);
   };
+
+  // Update local storage when the state changes
+  useEffect(() => {
+    localStorage.setItem("isSignup", isSignup.toString());
+  }, [isSignup]);
   return (
     <nav className={styles.nav}>
       <Link to="/" className={styles.logo}>
@@ -58,7 +72,7 @@ const NavBar = ({ login, loginHandler }) => {
           <Link
             to={"/login"}
             className={styles.loginBtn}
-            onClick={loginHandler}
+            onClick={logoutHandler}
           >
             Logout
           </Link>

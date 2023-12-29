@@ -8,26 +8,26 @@ const Hero = () => {
     {
       id: 1,
       img: deli,
-      head: "Fast delivery",
-      text: "Receive your order in the twinkle of an eye",
+      head: "Fast Delivery",
+      text: "Quick and efficient delivery with our express service.",
     },
     {
       id: 2,
       img: deli,
-      head: "Fast delivery",
-      text: "Receive your order in a flash",
+      head: "Fresh Ingredients",
+      text: "Finest dishes made from the freshest, high-quality ingredients.",
     },
     {
       id: 3,
       img: deli,
-      head: "Fast delivery",
-      text: "Receive your order in a flash",
+      head: "Exclusive Menu",
+      text: "Curated menu of exclusive dishes crafted to satisfy your cravings.",
     },
     {
       id: 4,
       img: deli,
-      head: "Fast delivery",
-      text: "Receive your order in a flash",
+      head: "Secure Packaging",
+      text: "Rest assured with our secure packaging for a perfect delivery.",
     },
   ];
   return (
@@ -55,4 +55,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

@@ -25,6 +25,11 @@ const LoginCard = ({ loginHandler }) => {
 
       // Redirect to /cart upon successful login
       if (response.status === 200) {
+        const token = response.data.data.accessToken;
+        console.log("AccessToken:", token);
+
+        localStorage.setItem("authToken", token);
+
         setLoginSuccess(true);
         loginHandler();
         console.log(response.data);
