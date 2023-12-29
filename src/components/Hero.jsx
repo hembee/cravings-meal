@@ -1,6 +1,9 @@
 import React from "react";
 import burger from "../images/burger.png";
-import deli from "../images/deli.jpeg";
+import deli from "../images/delivery.avif";
+import packaging from "../images/package.jpg";
+import ingredients from "../images/ingredients.jpg";
+import menu from "../images/menu.avif";
 import styles from "../styles/Hero.module.css";
 
 const Hero = () => {
@@ -13,19 +16,19 @@ const Hero = () => {
     },
     {
       id: 2,
-      img: deli,
+      img: ingredients,
       head: "Fresh Ingredients",
       text: "Finest dishes made from the freshest, high-quality ingredients.",
     },
     {
       id: 3,
-      img: deli,
+      img: menu,
       head: "Exclusive Menu",
       text: "Curated menu of exclusive dishes crafted to satisfy your cravings.",
     },
     {
       id: 4,
-      img: deli,
+      img: packaging,
       head: "Secure Packaging",
       text: "Rest assured with our secure packaging for a perfect delivery.",
     },

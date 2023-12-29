@@ -6,6 +6,7 @@
 .row {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .col {
@@ -18,13 +19,14 @@
   width: 617px;
   height: 180px;
   flex-shrink: 0;
-  background: rgba(83, 220, 18, 0.02);
-  padding: 40px 35px;
+  background: #d4af37;
+  padding: 20px 35px;
   display: flex;
   flex-direction: row;
-  /* margin-bottom: 5px; */
+  margin-bottom: 15px;
   align-items: center;
   position: relative;
+  border-radius: 20px;
 }
 
 .mealImg {
@@ -34,7 +36,7 @@
 }
 
 .col2 h2 {
-  color: #000;
+  color: #2d2d2d;
   font-size: 18px;
   font-style: normal;
   font-weight: 800;
@@ -45,7 +47,7 @@
 
 .col2 p {
   width: 208px;
-  color: #000;
+  color: #2d2d2d;
   font-size: 12px;
   font-style: normal;
   font-weight: 300;
@@ -55,7 +57,7 @@
 }
 
 .col h3 {
-  color: #000;
+  color: #2d2d2d;
   font-family: Rubik;
   font-size: 16px;
   font-style: normal;
@@ -70,7 +72,7 @@
   flex-direction: row;
   align-items: center;
   position: absolute;
-  bottom: 50px;
+  bottom: 32px;
   right: 70px;
 }
 
@@ -83,7 +85,7 @@
 
 .decreaseBtn {
   border: 1px solid #dc8b12;
-  color: #dc8b12;
+  color: #fff;
   margin-right: 10px;
   background-color: transparent;
 }
@@ -99,8 +101,10 @@
   width: 400px;
   height: 344px;
   flex-shrink: 0;
-  background: rgba(83, 220, 18, 0.02);
+  background: #d4af37;
   text-align: center;
+  padding: 20px 30px;
+  border-radius: 20px;
 }
 
 .ladittion h2 {
@@ -144,7 +148,6 @@
     height: 80%;
     padding: 5px;
     flex-direction: column;
-    background-color: rgb(185, 215, 235);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     margin-bottom: 20px;
     border-radius: 20px;
@@ -158,12 +161,12 @@
     font-size: 12px;
     left: 48%;
   }
-  .decreaseBtn,
+  /* .decreaseBtn,
   .increaseBtn {
     cursor: pointer;
     width: 26px;
     height: 20px;
-  }
+  } */
   .ladittion {
     margin-top: 20px;
     margin-bottom: 50px;
@@ -171,7 +174,6 @@
     text-align: center;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    background-color: rgb(185, 215, 235);
     padding: 30px 40px;
   }
 }
