@@ -12,7 +12,6 @@
   align-items: center;
   flex-direction: column;
   padding: 40px;
-  
 }
 
 .email,
@@ -85,7 +84,7 @@
     width: 90vw;
     height: auto;
     padding: 20px;
-    background-color: #fdfafa;
+    background-color: rgb(185, 215, 235);
     margin-top: 50%;
   }
   .loginCard p {
