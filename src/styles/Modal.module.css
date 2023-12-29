@@ -55,9 +55,9 @@
     align-items: center;
   }
   .card {
-    width: 382px;
-    height: 234px;
-    padding: 20px;
+    width: auto;
+    height: auto;
+    padding: 50px 70px;
   }
   .img {
     width: 120px;
@@ -65,5 +65,8 @@
   .submitBtn {
     width: 60px;
     height: 35px;
+  }
+  .text {
+    font-size: 20px;
   }
 }

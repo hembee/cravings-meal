@@ -11,7 +11,7 @@ export const Modal = ({ modalHandler }) => {
           e.stopPropagation();
         }}
       >
-        <img className={styles.img} src={check} />
+        <img className={styles.img} alt="check" src={check} />
         <h1 className={styles.text}>Order confirmed</h1>
         <Link to={"/"} className={styles.submitBtn} onClick={modalHandler}>
           OK
