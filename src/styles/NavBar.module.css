@@ -80,7 +80,8 @@
 
 @media (max-width: 767px) {
   .nav {
-    padding: 30px 5px;
+    background: #d4af37;
+    padding: 20px 5px;
     justify-content: center;
     gap: 15%;
     width: 100%;
