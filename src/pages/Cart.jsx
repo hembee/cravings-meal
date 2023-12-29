@@ -4,9 +4,17 @@ import pasta from "../images/pasta.png";
 import donut from "../images/donuts.png";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Modal } from "../components/Modal";
 
 const Cart = () => {
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
+
+  const modalHandler = () => {
+    setShowModal((prevState) => {
+      return !prevState;
+    });
+  };
 
   useEffect(() => {
     const token = localStorage.getItem("authToken");
@@ -121,17 +129,13 @@ const Cart = () => {
               <p className={styles.para}>Total</p>
               <p className={styles.price}>{`₦${total}`}</p>
             </div>
-            <button
-              className={styles.proceedBtn}
-              onClick={() => {
-                // Implement your checkout logic here
-              }}
-            >
+            <button className={styles.proceedBtn} onClick={modalHandler}>
               Proceed to checkout
             </button>
           </div>
         </div>
       </div>
+      {showModal && <Modal modalHandler={modalHandler} />}
     </div>
   );
 };
