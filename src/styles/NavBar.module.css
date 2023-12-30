@@ -64,8 +64,10 @@
   align-items: center;
   width: 130px;
   height: 45px;
+  border: none;
   border-radius: 10px;
   background: #dc8b12;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   color: #fff;
   cursor: pointer;
   color: #fdf9f9;
@@ -81,6 +83,7 @@
 @media (max-width: 767px) {
   .nav {
     background: #d4af37;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     padding: 20px 5px;
     justify-content: center;
     gap: 15%;

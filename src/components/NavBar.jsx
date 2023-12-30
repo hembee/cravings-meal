@@ -60,7 +60,7 @@ const NavBar = ({ login, logoutHandler }) => {
             />
           </svg>
         </Link>
-        {!login ? (
+        {!login && (
           <Link
             to={isSignup ? "/signup" : "/login"}
             className={styles.loginBtn}
@@ -68,14 +68,18 @@ const NavBar = ({ login, logoutHandler }) => {
           >
             {isSignup ? "Signup" : "Login"}
           </Link>
-        ) : (
-          <Link
-            to={"/login"}
+        )}
+        {login && (
+          <button
             className={styles.loginBtn}
-            onClick={logoutHandler}
+            onClick={() => {
+              console.log("Logging out");
+              localStorage.removeItem("authToken");
+              window.location.reload();
+            }}
           >
             Logout
-          </Link>
+          </button>
         )}
       </div>
     </nav>
