@@ -19,6 +19,21 @@
   color: red;
 }
 
+.pass {
+  width: 531px;
+  padding: 0;
+  height: 62px;
+  background: #fff;
+  margin-bottom: 35px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.password {
+  width: 100%;
+  height: 100%;
+}
+
 .email,
 .password {
   width: 531px;
@@ -95,9 +110,23 @@
     font-size: 10px;
   }
 
+  .pass {
+    width: 90%;
+    height: 40px;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+
+  .password {
+    width: 100%;
+  }
+
+  .email {
+    width: 90%;
+  }
+
   .email,
   .password {
-    width: 90%;
     height: 40px;
     margin-bottom: 10px;
     font-size: 12px;

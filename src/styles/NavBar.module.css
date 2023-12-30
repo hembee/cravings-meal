@@ -8,7 +8,6 @@
 
 .logo {
   text-decoration: none;
-  width: 315px;
   color: #000;
   font-family: "Rubik", sans-serif;
   font-size: 32px;
@@ -111,5 +110,12 @@
     border-radius: 5px;
     font-size: 13px;
     letter-spacing: 0.07px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .search,
+  .searchIcon {
+    display: none;
   }
 }

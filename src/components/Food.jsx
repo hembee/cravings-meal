@@ -10,24 +10,25 @@ const Food = () => {
       id: 1,
       img: burger,
       header: "Burger",
-      text: "Lorem ipsum dolor sit amet cocon adipisicing elit........",
+      text: "Juicy beef patty, fresh lettuce, ripe tomatoes, and secret sauce in a toasted bun.",
       price: "₦2400",
     },
     {
       id: 2,
       img: pasta,
       header: "Pasta",
-      text: "Lorem ipsum dolor sit amet cocon adipisicing elit........",
+      text: "Perfectly cooked pasta with marinara sauce, fresh herbs, and Parmesan cheese.",
       price: "₦1800",
     },
     {
       id: 3,
       img: donut,
       header: "Donut",
-      text: "Lorem ipsum dolor sit amet cocon adipisicing elit........",
+      text: "Indulge in a sweet and fluffy donut, glazed to absolute perfection.",
       price: "₦800",
     },
   ];
+
   return (
     <section className={styles.food}>
       {meals.map((meal) => {

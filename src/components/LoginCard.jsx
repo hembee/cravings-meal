@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "../styles/LoginCard.module.css";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import { RiEyeFill, RiEyeOffFill } from "react-icons/ri";
 
 const LoginCard = ({ loginHandler }) => {
   const [email, setEmail] = useState("");
@@ -9,7 +10,22 @@ const LoginCard = ({ loginHandler }) => {
   const [correct, setCorrect] = useState(true);
   const [loginSuccess, setLoginSuccess] = useState(false); // State to track login success
   const [loading, setLoading] = useState(false);
+  const [show, setShow] = useState(false);
   const navigate = useNavigate();
+
+  const passwordToggle = () => {
+    setShow((prevState) => {
+      return !prevState;
+    });
+  };
+
+  const iconStyle = {
+    cursor: "pointer",
+    marginLeft: "-30px",
+    position: "absolute",
+    top: "50%",
+    transform: "translateY(-50%)",
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -74,18 +90,23 @@ const LoginCard = ({ loginHandler }) => {
           }}
           required
         />
-        <input
-          type="password"
-          name="password"
-          id="password"
-          className={styles.password}
-          placeholder="Password"
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-          required
-        />
+        <div className={styles.pass}>
+          <input
+            type={show ? "password" : "text"}
+            name="password"
+            id="password"
+            className={styles.password}
+            placeholder="Password"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            required
+          />
+          <i style={iconStyle} onClick={passwordToggle}>
+            {!show ? <RiEyeOffFill /> : <RiEyeFill />}
+          </i>
+        </div>
         <button className={styles.submit} type="submit" disabled={loading}>
           {loading ? (
             <div className={`${styles.spinner} ${styles.loading}`} />
