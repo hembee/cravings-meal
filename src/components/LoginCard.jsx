@@ -23,6 +23,7 @@ const LoginCard = ({ loginHandler }) => {
     cursor: "pointer",
     marginLeft: "-30px",
     position: "absolute",
+    fontSize: "15px",
     top: "50%",
     transform: "translateY(-50%)",
   };
