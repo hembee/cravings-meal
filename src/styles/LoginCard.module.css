@@ -14,6 +14,11 @@
   padding: 40px;
 }
 
+.invalid {
+  margin-bottom: 10px;
+  color: red;
+}
+
 .email,
 .password {
   width: 531px;

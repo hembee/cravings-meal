@@ -6,12 +6,17 @@ import { Link, useNavigate } from "react-router-dom";
 const LoginCard = ({ loginHandler }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [correct, setCorrect] = useState(true);
   const [loginSuccess, setLoginSuccess] = useState(false); // State to track login success
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const invalid = () => {
+      setCorrect(false);
+    };
 
     try {
       setLoading(true);
@@ -34,13 +39,14 @@ const LoginCard = ({ loginHandler }) => {
         loginHandler();
         console.log(response.data);
         console.log("AccessToken:", JSON.stringify(token));
-      } else if (response.status === 404) {
+      } else if (response.status === 404 || response.status === 404) {
         console.log(response.data);
       }
     } catch (error) {
       console.error("Login failed:", error);
     } finally {
       setLoading(false);
+      invalid();
     }
   };
 
@@ -53,6 +59,9 @@ const LoginCard = ({ loginHandler }) => {
   return (
     <div>
       <form className={styles.loginCard} onSubmit={handleSubmit}>
+        {!correct && (
+          <p className={styles.invalid}>Invalid email or password</p>
+        )}
         <input
           type="email"
           name="email"

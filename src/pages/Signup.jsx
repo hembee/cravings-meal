@@ -6,17 +6,17 @@ const Signup = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [invalid, setInvalid] = useState(false);
   const [password, setPassword] = useState("");
   const [signupSuccess, setSignupSuccess] = useState(false); // State to track signup success
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+
+  const passwordHandler = () => {
+    setInvalid(true);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (password.length < 8) {
-      setError("Password must be at least 8 characters long");
-      return;
-    }
     try {
       setLoading(true);
       const response = await axios.post(
@@ -39,6 +39,7 @@ const Signup = () => {
     } catch (error) {
       console.error("Signup failed:", error.response?.data?.message);
     } finally {
+      passwordHandler();
       setLoading(false);
     }
   };
@@ -53,7 +54,6 @@ const Signup = () => {
   return (
     <>
       <div className={styles.center}>
-        {error && <p className={styles.error}>{error.response.data.message}</p>}
         <form className={styles.signupCard} onSubmit={handleSubmit}>
           <input
             type="firstName"
@@ -103,7 +103,7 @@ const Signup = () => {
             }}
             required
           />
-          <p className={styles.hint}>
+          <p className={`${!invalid ? styles.hint : styles.red}`}>
             Password should be at least 8 characters, must include one uppercase
             letter, one lowercase letter, one number and one sppecial character.{" "}
           </p>
